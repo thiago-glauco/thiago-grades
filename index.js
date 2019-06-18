@@ -12,3 +12,6 @@ grade.addGrade( '1' );
 grade.addGrade( '2' );
 grade.addGrade( '5' );
 console.dir( grade );
+
+let otherGrade = new Grade( [10, 15, 25] );
+console.dir(otherGrade)

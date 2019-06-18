@@ -1,8 +1,17 @@
 export class Grade {
 
-  constructor( val ) {
-    
-    this.grades = [];
+  constructor( vals ) {
+    if( vals !== undefined ) {
+      if( Array.isArray(vals) ) {
+        if( vals.some( this.checkN )) {
+          this.grades = [];
+        } else {
+          this.grades = vals.slice();
+        }
+      }
+    } else {
+      this.grades = [];
+    }
     this.error = [];
   }
 
