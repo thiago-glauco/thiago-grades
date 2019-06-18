@@ -3,10 +3,10 @@ export class Grade {
   constructor( vals ) {
     if( vals !== undefined ) {
       if( Array.isArray(vals) ) {
-        if( vals.some( this.checkN )) {
-          this.grades = [];
-        } else {
+        if( vals.every( this.checkNum )) {
           this.grades = vals.slice();
+        } else {
+          this.grades = [];
         }
       }
     } else {
