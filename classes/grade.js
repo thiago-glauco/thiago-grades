@@ -6,13 +6,12 @@ export class Grade {
         if( vals.every( this.checkNum )) {
           this.grades = vals.slice();
         } else {
-          this.grades = [];
+          throw new Exception("Valor não numérico ou fora do range permitido");
         }
       }
     } else {
       this.grades = [];
     }
-    this.error = [];
   }
 
   checkNum( n ) {
@@ -30,11 +29,20 @@ export class Grade {
   addGrade( grade ) {
     if( this.checkNum( grade ) ) {
       this.grades.push( grade );
-      return 1;
     }
     else {
-      console.log( "Cannot add grade!")
-      return -1;
+      throw new Exception("Valor não numérico ou fora do range permitido");
     }
+  }
+}
+
+class Exception {
+  constructor( msg ) {
+    this.message = msg;
+    this.name = "GradeException"
+  }
+
+  toString() {
+    return this.name + ': "' + this.message + '"';
   }
 }
