@@ -11,7 +11,7 @@ grade.addGrade( '0.55' );
 grade.addGrade( '1' );
 grade.addGrade( '2' );
 grade.addGrade( '5' );
-console.dir( grade.average() );
+console.dir( grade );
 
 let otherGrade;
 try{ 
@@ -21,4 +21,4 @@ try{
   otherGrade = new Grade( );
 }
 console.dir(otherGrade)
-console.log( otherGrade.average());
+console.log(otherGrade);

@@ -1,6 +1,23 @@
 export class Grade {
 
   constructor( vals ) {
+    console.dir(arguments);
+    if( arguments.length > 0 ) {
+      for( arg of arguments ) {
+        if( Array.isArray(arg) ) {
+          if( arg.every( this.checkNum )) {
+            this.grades.concat(arg);
+          } else {
+            throw new Exception("Valor não numérico ou fora do range permitido");
+          }
+        } else {
+          this.addGrade(arg)
+        }
+      }
+    } else {
+      this.grades = [];
+    }
+    /*
     if( vals !== undefined ) {
       if( Array.isArray(vals) ) {
         if( vals.every( this.checkNum )) {
@@ -11,7 +28,7 @@ export class Grade {
       }
     } else {
       this.grades = [];
-    }
+    }*/
   }
 
   checkNum( n ) {
