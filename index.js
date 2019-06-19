@@ -15,10 +15,14 @@ console.dir( grade );
 
 let otherGrade;
 try{ 
-  otherGrade = new Grade( ['10', '5', '2'] );
+  otherGrade = new Grade( 4, 5, 6, ['10', '5', '2'], 10, '5' );
 } catch ( e ) {
   console.warn( e );
   otherGrade = new Grade( );
 }
-console.dir(otherGrade)
-console.log(otherGrade);
+console.dir(otherGrade);
+try {
+  console.log(otherGrade.average());
+} catch ( e ) {
+  console.warn( e );
+}
