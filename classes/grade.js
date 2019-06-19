@@ -34,6 +34,13 @@ export class Grade {
       throw new Exception("Valor não numérico ou fora do range permitido");
     }
   }
+
+  average( ) {
+    let sum = this.grades.reduce( ( a, b ) => 
+      (Number.parseFloat(a) + Number.parseFloat(b) ) );
+    let avg = sum/this.grades.length
+    return avg.toFixed(2);
+  }
 }
 
 class Exception {

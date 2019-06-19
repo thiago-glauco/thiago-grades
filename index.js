@@ -11,13 +11,14 @@ grade.addGrade( '0.55' );
 grade.addGrade( '1' );
 grade.addGrade( '2' );
 grade.addGrade( '5' );
-console.dir( grade );
+console.dir( grade.average() );
 
 let otherGrade;
 try{ 
-  otherGrade = new Grade( ['10', '5c', '2'] );
+  otherGrade = new Grade( ['10', '5', '2'] );
 } catch ( e ) {
   console.warn( e );
   otherGrade = new Grade( );
 }
 console.dir(otherGrade)
+console.log( otherGrade.average());
