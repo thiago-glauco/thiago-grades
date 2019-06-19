@@ -1,12 +1,13 @@
 export class Grade {
 
   constructor( vals ) {
+    this.grades = [];
     console.dir(arguments);
     if( arguments.length > 0 ) {
-      for( arg of arguments ) {
+      for( let arg of arguments ) {
         if( Array.isArray(arg) ) {
           if( arg.every( this.checkNum )) {
-            this.grades.concat(arg);
+            this.grades = this.grades.concat( arg );
           } else {
             throw new Exception("Valor não numérico ou fora do range permitido");
           }
